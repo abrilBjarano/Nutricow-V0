@@ -71,6 +71,7 @@ export class NutricowService {
   reset(){
     this.items.forEach( item => {
       item.counter = 0;
+      this.saveLocalStorage();
     })
   }
 
