@@ -1,26 +1,24 @@
 <div class="list-group mb-3">
-  <div
-    *ngFor="let item of nutricowService.items"
-    class="list-group-item bg-secondary d-flex justify-content-between rounded-pill mb-2 mx-5 bg-warning">
+  <div *ngFor="let item of nutricowService.items" class="list-group-item bg-secondary d-flex justify-content-between rounded-pill mb-2 mx-5 bg-warning">
 
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center emoji-with-shadow">
       {{ item.emoji }}
     </div>
 
-    <div class="d-flex align-items-center mx-auto ">
-      <span class="badge badge-primary badge-pill">
-        <strong class="h5 text-dark">{{ item.counter }} / {{ item.upperLimit }}</strong>
+    <div class="d-flex align-items-center mx-auto">
+      <span
+        [ngClass]="{'text-black': item.counter < item.upperLimit, 'text-success': item.counter === item.upperLimit}"
+        class="badge badge-pill font-weight-bold">
+        {{ item.counter }} / {{ item.upperLimit }}
       </span>
     </div>
 
     <div>
-      <button class="btn btn-success mx-2 btn-sm"
-      (click)="nutricowService.substractQty(item)">
+      <button class="btn btn-danger mx-2 btn-sm" (click)="nutricowService.substractQty(item)">
         ➖
       </button>
 
-      <button class="btn btn-danger mx-1 btn-sm"
-      (click)="nutricowService.addQty(item)">
+      <button class="btn btn-success mx-1 btn-sm" (click)="nutricowService.addQty(item)">
         ➕
       </button>
     </div>

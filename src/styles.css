@@ -1,1 +1,6 @@
 body { background-color: rgb(29, 24, 49) !important; }
+
+.emoji-with-shadow {
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.9);
+  /* Puedes ajustar los valores de text-shadow según tus preferencias */
+}

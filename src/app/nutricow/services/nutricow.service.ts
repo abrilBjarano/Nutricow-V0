@@ -7,11 +7,11 @@ import { Item } from '../interfaces/item.interface';
 export class NutricowService {
 
   public items: Item[] = [{
-    emoji: '🐄',
+    emoji: '🥛',
     counter: 0,
     upperLimit: 1
   },{
-    emoji: '🍉',
+    emoji: '🍇',
     counter: 0,
     upperLimit: 3
   },{
@@ -35,7 +35,7 @@ export class NutricowService {
     counter: 0,
     upperLimit: 1
   },{
-    emoji: '🫗',
+    emoji: '🚰',
     counter: 0,
     upperLimit: 5
   }];
@@ -43,7 +43,6 @@ export class NutricowService {
   private saveLocalStorage(): void {
 
     const itemsJSON = JSON.stringify(this.items);
-
     localStorage.setItem('history', itemsJSON );
   }
 
@@ -54,11 +53,6 @@ export class NutricowService {
       this.items = JSON.parse(itemsJSON);
     }
   }
-
-
-  // private loadLocalStorage(): void {
-  //   const temporal = localStorage.getItem('history');
-  // }
 
   substractQty(item: any) {
     if (item.counter > 0) {
