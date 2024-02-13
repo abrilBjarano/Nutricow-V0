@@ -6,7 +6,7 @@ import { Item } from '../interfaces/item.interface';
 })
 export class NutricowService {
 
-  public items: Item[] = [{
+  private items: Item[] = [{
     emoji: '🥛',
     counter: 0,
     upperLimit: 1
@@ -52,6 +52,10 @@ export class NutricowService {
     if (itemsJSON) {
       this.items = JSON.parse(itemsJSON);
     }
+  }
+
+  public getItems(): Item[] {
+    return [...this.items];
   }
 
   substractQty(item: any) {
